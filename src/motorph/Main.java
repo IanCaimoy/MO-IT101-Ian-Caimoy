@@ -18,7 +18,8 @@ public class Main
         Scanner fltScanner = new Scanner(System.in);
         
         // Create an object from Employee class
-        Employee _employee = new Employee();
+        // Create an object from Deductions 
+        Employee _employee = new Employee();        
         
         // Prompt User Input
         // Assign Values to Employee Setter Methods
@@ -89,8 +90,8 @@ public class Main
         System.out.println("===================");
         System.out.println("GROSS PAY: " + _employee.grossPay() + " PHP");
         System.out.println("Less: DEDUCTIONS");
-        System.out.println("PAG-IBIG: ");
-        System.out.println("Philhealth: ");
+        System.out.println("PAG-IBIG: " + _employee.getPagibig());
+        System.out.println("Philhealth: " + _employee.getPhilhealth());
         System.out.println("SSS: ");
         System.out.println("===================");
         System.out.println("Taxable Income: ");

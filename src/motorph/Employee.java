@@ -10,6 +10,7 @@ import java.time.Duration;
 // Employee Details
 // Employee Time in and Time out
 // Calculate Hours Worked
+// Calculate Gross Pay
  
 public class Employee 
 {
@@ -143,7 +144,7 @@ public class Employee
     
     // Compute Hours Worked
     // using "between" method in Duration Class
-    // Return Duration as hours
+    // Return _duration as hours
     public long computeHoursWorked()
     {
         Duration _duration = Duration.between(_timeIn, _timeOut);
@@ -165,4 +166,81 @@ public class Employee
     {
         return basicPay() + _riceSubsidy + _phoneAllowance + _clothingAllowance;
     }
+    
+    
+    // THIS SECTION CONTAINS 
+    // DEDUCTIONS
+    // Withholding Tax
+    
+    // Compute PAGIBIG contribution
+    // Getter Method + IF Statement
+    public float computePagibigRate()
+    {
+        float basicSalary = getBasicSalary();
+        float i = 1500;
+        
+        if (basicSalary <= i)
+        {
+            return basicSalary * 0.01f;
+        }
+        else if (basicSalary > i)
+        {
+            return basicSalary * 0.02f;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+        
+    // Compute Max PAGIBIG Contribution    
+    public float getPagibig()
+    {
+        if (computePagibigRate() < 99f)
+        {
+            return computePagibigRate();
+        }
+        else
+        {
+            return 100;
+        }
+    }
+    
+    
+    // Compute Philhealth
+    public float getPhilhealth()
+    {
+        float basicSalary = getBasicSalary();
+        float premiumRate = 0.03f;
+        float minimum = 10000f;
+        float maximum = 60000f;
+        float employeeShare = 0.5f;
+        
+        if (basicSalary <= minimum)
+        {
+            return minimum * premiumRate * employeeShare;
+        }
+        else if (basicSalary > minimum && basicSalary < maximum)
+        {
+            return basicSalary * premiumRate * employeeShare;
+        }
+        else if (basicSalary > maximum)
+        {
+            return  maximum * premiumRate * employeeShare;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+    
+    
+    
+        
 }
+    
+    
+    
+    
+    
+
