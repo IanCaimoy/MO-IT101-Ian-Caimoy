@@ -145,10 +145,11 @@ public class Employee
     // Compute Hours Worked
     // using "between" method in Duration Class
     // Return _duration as hours
-    public long computeHoursWorked()
+    public double computeHoursWorked()
     {
-        Duration _duration = Duration.between(_timeIn, _timeOut);
-        long hours = _duration.toHours();
+        Duration duration = Duration.between(_timeIn, _timeOut);
+        long minutes = duration.toMinutes();
+        double hours = (double) minutes / 60;
         return hours;
     }
     
@@ -157,8 +158,7 @@ public class Employee
     // Return value _totalHoursWorked * _hourlyRate
     public float basicPay()
     {
-        float _totalHoursWorked = computeHoursWorked();
-        return _totalHoursWorked * _hourlyRate;
+        return (float) (computeHoursWorked() * _hourlyRate);
     }
     
     // Compute Gross Pay

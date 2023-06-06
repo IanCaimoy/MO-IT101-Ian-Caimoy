@@ -80,23 +80,29 @@ public class Main
         System.out.println("Employee First Name: " + _employee.getEmployeeFirstName());
         System.out.println("Employee Last Name: " + _employee.getEmployeeLastName());
         System.out.println("============================");
+        System.out.println();
         System.out.println("Date Worked: " + _employee.getDate());
         System.out.println("Total Hours Worked: " + _employee.computeHoursWorked());
         System.out.println("============================");
-        System.out.println("Basic Pay: " + _employee.basicPay());
+        System.out.println("BASIC PAY: " + _employee.basicPay());
+        System.out.println();
+        System.out.println("DE MINIMIS");
         System.out.println("Rice Subsidy: " + _employee.getRiceSubsidy());
         System.out.println("Phone Allowance: " + _employee.getPhoneAllowance());
         System.out.println("Clothing Allowance: " + _employee.getClothingAllowance());
         System.out.println("============================");
-        System.out.println("GROSS PAY: " + _employee.grossPay() + " PHP");
-        System.out.println("Less: DEDUCTIONS");
+        System.out.println("GROSS PAY: " + _employee.grossPay());
+        System.out.println();
+        System.out.println("DEDUCTIONS");
         System.out.println("PAG-IBIG: " + _employee.getPagibig());
         System.out.println("Philhealth: " + _employee.getPhilhealth());
         System.out.println("SSS: " + _employee.getSSS());
         System.out.println("============================");
         System.out.println("Taxable Income: " + _employee.getTaxableIncome());
-        System.out.println("Less: Withholding Tax: " + _employee.getWithholdingTax());
+        System.out.println();
+        System.out.println("(Less) Withholding Tax: " + _employee.getWithholdingTax());
         System.out.println("============================");
+        System.out.println();
         System.out.println("NET PAY: " + _employee.getNetPay());
     }
     
